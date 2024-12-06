@@ -1,21 +1,19 @@
-import { createContext, useState } from "react"
+// LanguageContext.jsx
+import React, { createContext, useContext, useState } from 'react';
 
-const registeredLanguages = [
-    { code: "en", label: "English" },
-    { code: "tr", label: "Türkçe" },
-]
-export const LanguageContext = createContext();
+const LanguageContext = createContext();
+
+export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState(registeredLanguages[0].code)
-    const [languages] = useState(registeredLanguages);
+  const [language, setLanguage] = useState('en');
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === 'en' ? 'tr' : 'en'));
+  };
 
-    const toggleLanguage = (languageCode) => {
-        setLanguage(languageCode);
-    }
-    return (
-        <LanguageContext.Provider value={{ language, toggleLanguage, languages }}>
-            {children}
-        </LanguageContext.Provider>
-    )
-}
+  return (
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
