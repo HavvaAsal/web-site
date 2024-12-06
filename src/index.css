@@ -4,13 +4,20 @@
 
 /* Varsayılan Tema (Light Mode) */
 html {
-    --left-bg-color: #4731D3; /* Sol taraf rengi */
-    --right-bg-color: #CBF281; /* Sağ taraf rengi */
-  }
-  
-  /* Karanlık Tema (Dark Mode) */
-  html.dark {
-    --left-bg-color: #171043; /* Sol taraf rengi (dark mode) */
-    --right-bg-color: #1A210B; /* Sağ taraf rengi (dark mode) */
-  }
-  
+  --left-bg-color: #4731D3; /* Sol taraf rengi */
+  --right-bg-color: #CBF281; /* Sağ taraf rengi */
+  --projects-bg-color: #CBF281;
+  --projects-title-color: #4731D3;
+  --card-bg-color: #FFFFFF;
+  --paragraph-color: #383838;
+}
+
+/* Karanlık Tema (Dark Mode) */
+html.dark {
+  --left-bg-color: #171043; /* Sol taraf rengi (dark mode) */
+  --right-bg-color: #1A210B; /* Sağ taraf rengi (dark mode) */
+  --projects-bg-color: #1A210B;
+  --projects-title-color: #CBF281;
+  --card-bg-color: #2B2727;
+  --paragraph-color: #FFFFFF;
+}
